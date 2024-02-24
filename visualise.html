@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Dependency Grammar visualiser</title>
+    <title>UD Annotation and Visualization</title>
     <link rel="root" href="./lib" />
     <!-- for JS -->
     <link rel="stylesheet" type="text/css" href="./lib/css/style.css" />
@@ -13,8 +13,11 @@
 
 <body>
     <div id="content" style="margin-bottom: 200px;">
-        <h1>Dependency Grammar visualiser</h1>
-        Forked from <a href="https://jonorthwash.github.io/visualise.html" target="_blank">Jonorthwash</a> by <a target="_blank" href="https://souelvis.dev/sobre">Elvis de Souza</a>
+        <h1>UD Annotation and Visualization</h1>
+        <p>Forked from <a href="https://jonorthwash.github.io/visualise.html" target="_blank">Jonorthwash</a> by <a target="_blank" href="https://souelvis.dev/sobre">Elvis de Souza</a></p>
+        <p>Only tested for sentences encoded in the CoNLL-U format</p>        
+
+        <hr>
 
         <p>
             Load corpus from file:
@@ -29,10 +32,16 @@
         <input disabled type="button" value="Previous Sentence" id="prevSenBtn" onclick="javascript:prevSenSent();" />
         <input disabled type="button" value="Next Sentence" id="nextSenBtn" onclick="javascript:nextSenSent();" />
         <input disabled type="button" value="Export Corpus" id="exportBtn" onclick="javascript:exportCorpora();" />
-
+        
+        <hr>
+        
         <p>
-            Sentence annotation: <select id="annoMode"><option value="indata">text mode</option><option value="indataTable">table mode</option></select>
-            Highlight (in table mode): <input type="text" id="highlight" /> <!--input disabled type="button" value="Update Visualization (Ctrl+Enter)" id="updateVisBtn" onclick="javascript:keyUpFunc();" /-->
+            Display mode: <select id="annoMode"><option value="indata">text</option><option value="indataTable">table</option></select>
+            Highlight (in table mode): <input type="text" id="highlight" />
+            <!--input disabled type="button" value="Update Visualization (Ctrl+Enter)" id="updateVisBtn" onclick="javascript:keyUpFunc();" /-->
+            Show dependencies:
+            <label><input type="checkbox" id="basicDep" onchange="keyUpFunc()" checked />Basic</label>
+            <label><input type="checkbox" id="enhancedDep" onchange="keyUpFunc()" checked />Enhanced</label>
         </p>
 
         <table class="annoField" id="indataTable" style="width:100%; margin:auto; display:none">
