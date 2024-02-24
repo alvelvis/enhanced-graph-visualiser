@@ -12,25 +12,38 @@
 </head>
 
 <body>
-    <div id="content">
-        Current Sentence: <span id="currentsen">00</span> / <span id="totalsen">00</span>&nbsp;
-        <input disabled type="button" value="Previous Sentence" id="prevSenBtn" onClick="javascript:prevSenSent();" />
-        <input disabled type="button" value="Next Sentence" id="nextSenBtn" onClick="javascript:nextSenSent();" />
-
-        <p>Enter trees below in any supported format (SD, CG3, CoNLL-U):</p>
-
-        <textarea id="indata" style="width: 100%" rows="20"></textarea>
+    <div id="content" style="margin-bottom: 200px;">
+        <h1>Dependency Grammar visualiser</h1>
+        Forked from <a href="https://jonorthwash.github.io/visualise.html" target="_blank">Jonorthwash</a> by <a target="_blank" href="https://souelvis.dev/sobre">Elvis de Souza</a>
 
         <p>
-            <input type="button" onClick="javascript:exportCorpora();" value="Export Corpus" />
+            Load corpus from file:
+            <input type="file" id="filename">
         </p>
-
-        <p>
-            Load Corpora from file:
-            <input type="file" id="filename"/>
-        </p>
-
+    
         <div id="detected"></div>
+
+        <hr>
+        
+        Current Sentence: <span id="currentsen">00</span> / <span id="totalsen">00</span>&nbsp;
+        <input disabled type="button" value="Previous Sentence" id="prevSenBtn" onclick="javascript:prevSenSent();" />
+        <input disabled type="button" value="Next Sentence" id="nextSenBtn" onclick="javascript:nextSenSent();" />
+        <input disabled type="button" value="Export Corpus" id="exportBtn" onclick="javascript:exportCorpora();" />
+
+        <p>
+            Sentence annotation: <select id="annoMode"><option value="indata">text mode</option><option value="indataTable">table mode</option></select>
+            Highlight (in table mode): <input type="text" id="highlight" /> <!--input disabled type="button" value="Update Visualization (Ctrl+Enter)" id="updateVisBtn" onclick="javascript:keyUpFunc();" /-->
+        </p>
+
+        <table class="annoField" id="indataTable" style="width:100%; margin:auto; display:none">
+            
+        </table>
+        
+        <textarea class="annoField" spellcheck="false" id="indata" style="width: 100%;" rows="20"></textarea>
+
+        <p>
+            
+        </p>
 
         <pre><code id="dest" class="language-sdparse" tabs="yes">
             </code></pre>

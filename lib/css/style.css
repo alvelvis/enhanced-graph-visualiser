@@ -1,3 +1,20 @@
+table td {
+  padding: 5px;
+  /*border: 1px solid;*/
+}
+
+* {
+  overflow-anchor: none !important;
+}
+
+table tr:nth-child(odd) {
+  background-color: lightgray;
+}
+
+table tr:hover {
+  background-color: lightyellow;
+}
+
 /* -*- Mode: CSS; tab-width: 4; indent-tabs-mode: nil; -*- */
 /* vim:set ft=css ts=4 sw=4 sts=4 autoindent: */
 
