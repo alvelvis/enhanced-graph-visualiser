@@ -22,28 +22,31 @@
         <p>
             Load corpus from file:
             <input type="file" id="filename">
+            <div id="detected">Waiting sentence</div>
         </p>
-    
-        <div id="detected"></div>
 
         <hr>
         
+        CoNLL-U display mode: <select id="annoMode"><option value="indata">text</option><option value="indataTable">table</option></select>
+
+        <br>
+        <br>Highlight (in table mode): <input type="text" id="highlight" />
+        
+        <!--input disabled type="button" value="Update Visualization (Ctrl+Enter)" id="updateVisBtn" onclick="javascript:keyUpFunc();" /-->
+        <br>
+        <br>Show in the graph:
+        <br><label><input type="checkbox" id="basicDep" checked />Basic dependencies</label>
+        <br><label><input type="checkbox" id="enhancedDep" checked />Enhanced dependencies</label>
+        <br><label><input type="checkbox" id="onlyHighlighted" disabled />Only highlighted tokens</label>
+        
+        <hr>
+
         Current Sentence: <span id="currentsen">00</span> / <span id="totalsen">00</span>&nbsp;
         <input disabled type="button" value="Previous Sentence" id="prevSenBtn" onclick="javascript:prevSenSent();" />
         <input disabled type="button" value="Next Sentence" id="nextSenBtn" onclick="javascript:nextSenSent();" />
         <input disabled type="button" value="Export Corpus" id="exportBtn" onclick="javascript:exportCorpora();" />
-        
+
         <hr>
-        
-        <p>
-            Display mode: <select id="annoMode"><option value="indata">text</option><option value="indataTable">table</option></select>
-            Highlight: <input type="text" id="highlight" />
-            <!--input disabled type="button" value="Update Visualization (Ctrl+Enter)" id="updateVisBtn" onclick="javascript:keyUpFunc();" /-->
-            Show dependencies:
-            <label><input type="checkbox" id="basicDep" checked />Basic</label>
-            <label><input type="checkbox" id="enhancedDep" checked />Enhanced</label>
-            <label><input type="checkbox" id="onlyHighlighted" checked />Only highlighted tokens</label>
-        </p>
 
         <table class="annoField" id="indataTable" style="margin:auto; display:none">
             
@@ -65,5 +68,4 @@
     <!-- support for embedded visualizations -->
     <script type="text/javascript" src="./lib/ext/body.load.js"></script>
 </body>
-
 </html>
