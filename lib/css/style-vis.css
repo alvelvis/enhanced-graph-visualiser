@@ -286,6 +286,11 @@ rect.shadow_EditHighlight {
 .background1 {
   stroke: none;
   fill: #eeeeee;
+  display: none;
+}
+
+.text text:nth-child(2) {
+  display: none;
 }
 
 .backgroundHighlight {
