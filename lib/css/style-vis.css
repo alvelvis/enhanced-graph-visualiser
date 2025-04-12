@@ -240,13 +240,13 @@ rect.shadow_EditHighlight {
 }
 
 .arcs .highlight path {
-  stroke: #000000;
-  stroke-width: 1.5;
+  stroke: yellow;
+  stroke-width: 1.0;
   opacity: 1;
 }
 .arcs .highlight text {
   stroke: black;
-  fill: black;
+  /* fill: black; */
   stroke-width: 0.5;
 }
 .span.highlight rect {
