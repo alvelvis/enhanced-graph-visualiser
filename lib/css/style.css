@@ -122,12 +122,12 @@ pre > code {
   background-color: #cccccc;
 }
 
-img {
+/* img {
   -moz-box-shadow: 5px 5px 5px #999999;
   -webkit-box-shadow: 5px 5px 5px #999999;
   box-shadow: 5px 5px 5px #999999;
   margin-bottom: 0.5em;
-}
+} */
 
 img.right {
   border: 1px solid black;
