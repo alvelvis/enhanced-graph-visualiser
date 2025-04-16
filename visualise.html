@@ -72,8 +72,21 @@
     <!-- support for embedded visualizations -->
     <script type="text/javascript" src="./lib/ext/body.load.js"></script>    
     <style>
-        svg { padding-bottom: 10px; padding-top: 10px; background-color: white; zoom: 1.2; }
+        svg { 
+            padding-bottom: 10px; 
+            padding-top: 10px; 
+            background-color: white;    
+            zoom: 1.2; 
+        }
         .sentnum { display: none }
+        .embedding { cursor: grab; /* Makes it look draggable */ }
+        .embedding:active { cursor: grabbing; }
+        .embedding .span { cursor: default; /* Ensures span inside .embedding is not draggable */ }
+        .embedding {
+            user-select: none; /* Prevents text selection */
+            -webkit-user-select: none; /* For Safari */
+            -ms-user-select: none; /* For Internet Explorer/Edge */
+        }
     </style>
 </body>
 </html>
